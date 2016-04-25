@@ -226,6 +226,9 @@ func (b *Exporter) Listen(e <-chan Events) {
 				}
 			} else {
 				eventsUnmapped.Inc()
+				if *strictMatch {
+					continue
+				}
 				metricName = escapeMetricName(event.MetricName())
 			}
 

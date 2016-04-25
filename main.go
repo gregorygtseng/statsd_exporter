@@ -36,6 +36,7 @@ var (
 	metricsEndpoint     = flag.String("web.telemetry-path", "/metrics", "Path under which to expose metrics.")
 	statsdListenAddress = flag.String("statsd.listen-address", ":9125", "The UDP address on which to receive statsd metric lines.")
 	mappingConfig       = flag.String("statsd.mapping-config", "", "Metric mapping configuration file name.")
+	strictMatch         = flag.Bool("statsd.mapping-strict-match", false, "Only store metrics that match the mapping configuration.")
 	readBuffer          = flag.Int("statsd.read-buffer", 0, "Size (in bytes) of the operating system's transmit read buffer associated with the UDP connection. Please make sure the kernel parameters net.core.rmem_max is set to a value greater than the value specified.")
 	addSuffix           = flag.Bool("statsd.add-suffix", true, "Add the metric type (counter/gauge/timer) as suffix to the generated Prometheus metric (NOT recommended, but set by default for backward compatibility).")
 	showVersion         = flag.Bool("version", false, "Print version information.")
